@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite2">
+
+    <listeners>
+        <listener class-name="ExceptionListener" />
+    </listeners>
+
+    <test name="test2">
+        <!--Important to note order of xml elements-->
+        <parameter name="emptyString" value=""/>
+        <parameter name="spacedString" value="    "/>
+        <parameter name="punctuationString" value="!@!"/>
+
+        <groups>
+
+            <!--<define name="all">
+                <include name="positive"/>
+                <include name="negative"/>
+                <include name="boundary"/>
+            </define>
+
+            <run>
+                <include name="all"/>
+            </run>
+            -->
+
+            <!--<define name="allExceptBoundary">
+                <include name="positive"/>
+                <include name="negative"/>
+                <exclude name="boundary"/>
+            </define>
+
+            <run>
+                <include name="allExceptBoundary"/>
+            </run>
+            -->
+
+            <run>
+                <include name="negative" />
+            </run>
+
+
+        </groups>
+
+        <classes>
+            <class name="PalindromeGroupTest" />
+        </classes>
+
+    </test>
+</suite>
